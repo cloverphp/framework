@@ -23,6 +23,7 @@
     "require": {
         "php": "^8.2",
         "cloverphp/async": "^0.0.1",
+        "cloverphp/session": "^0.0.1",
         "cloverphp/view": "^0.0.1",
         "vlucas/phpdotenv": "^5.6"
     },

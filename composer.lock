@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6fe8f29e9a95422113b9be7b107c6157",
+    "content-hash": "1d5a6e555fc95780b3c01009fd2921f7",
     "packages": [
         {
             "name": "cloverphp/async",
@@ -50,6 +50,52 @@
                 "source": "https://github.com/cloverphp/clover-async/tree/v0.0.1"
             },
             "time": "2025-09-29T08:28:06+00:00"
+        },
+        {
+            "name": "cloverphp/session",
+            "version": "v0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cloverphp/clover-session.git",
+                "reference": "d36248479e13f1c46d61b19e8965f16f2ace09b9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cloverphp/clover-session/zipball/d36248479e13f1c46d61b19e8965f16f2ace09b9",
+                "reference": "d36248479e13f1c46d61b19e8965f16f2ace09b9",
+                "shasum": ""
+            },
+            "require": {
+                "ext-hash": "*",
+                "ext-json": "*",
+                "ext-openssl": "*",
+                "ext-session": "*",
+                "ext-sodium": "*",
+                "ext-tokenizer": "*",
+                "php": "^8.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Clover\\Session\\": "src/Session/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sushil Kumar",
+                    "email": "sushilkumbhar77@gmail.com"
+                }
+            ],
+            "description": "clover php session",
+            "support": {
+                "issues": "https://github.com/cloverphp/clover-session/issues",
+                "source": "https://github.com/cloverphp/clover-session/tree/v0.0.1"
+            },
+            "time": "2025-09-29T16:24:37+00:00"
         },
         {
             "name": "cloverphp/view",
