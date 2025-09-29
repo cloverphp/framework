@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b8bac38821124be7e64c983b86cda4ad",
+    "content-hash": "b71e929c05b898f99e8c447a20aa48ca",
     "packages": [
         {
             "name": "amphp/amp",
@@ -964,6 +964,51 @@
                 }
             ],
             "time": "2024-08-03T19:31:26+00:00"
+        },
+        {
+            "name": "cloverphp/async",
+            "version": "v0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cloverphp/clover-async.git",
+                "reference": "ce88acf54b442d1a4e5fa2b4fe7f3c398653f639"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cloverphp/clover-async/zipball/ce88acf54b442d1a4e5fa2b4fe7f3c398653f639",
+                "reference": "ce88acf54b442d1a4e5fa2b4fe7f3c398653f639",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^12.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Clover\\Http\\": "src/Http/",
+                    "Clover\\Async\\": "src/Async/",
+                    "Clover\\Utils\\": "src/Utils/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sushil Kumar",
+                    "email": "sushilkumbhar77@gmail.com"
+                }
+            ],
+            "description": "async",
+            "support": {
+                "issues": "https://github.com/cloverphp/clover-async/issues",
+                "source": "https://github.com/cloverphp/clover-async/tree/v0.0.1"
+            },
+            "time": "2025-09-29T08:28:06+00:00"
         },
         {
             "name": "daverandom/libdns",
