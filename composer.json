@@ -22,10 +22,8 @@
     ],
     "require": {
         "php": "^8.2",
-        "amphp/amp": "^3.1",
-        "amphp/http-server": "^3.4",
         "cloverphp/async": "^0.0.1",
-        "psr/log": "^3.0",
+        "cloverphp/view": "^0.0.1",
         "vlucas/phpdotenv": "^5.6"
     },
     "require-dev": {
