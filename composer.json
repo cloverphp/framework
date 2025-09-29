@@ -34,7 +34,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Clover\\": "src/Clover/"
+            "Clover\\Framework\\": "src/Framework/"
         }
     },
     "autoload-dev":{

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Clover\Http;
+namespace Clover\Framework\Http;
 
-use Clover\Interfaces\RequestInterface;
+use Clover\Framework\Interfaces\RequestInterface;
 
 final class Request implements RequestInterface
 {

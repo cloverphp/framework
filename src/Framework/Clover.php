@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Clover;
+namespace Clover\Framework;
 
-use Clover\Router\Router;
+use Clover\Framework\Router\Router;
 use Dotenv\Dotenv;
-use Clover\Http\Response;
-use Clover\Http\Request;
+use Clover\Framework\Http\Response;
+use Clover\Framework\Http\Request;
 
 class Clover
 {

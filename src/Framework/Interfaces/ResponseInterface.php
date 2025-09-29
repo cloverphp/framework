@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Clover\Interfaces;
+namespace Clover\Framework\Interfaces;
 
 interface ResponseInterface
 {

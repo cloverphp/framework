@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Clover\Http;
+namespace Clover\Framework\Http;
 
-use Clover\Interfaces\ResponseInterface;
+use Clover\Framework\Interfaces\ResponseInterface;
 
 final class Response implements ResponseInterface
 {

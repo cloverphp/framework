@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Clover\Router;
+namespace Clover\Framework\Router;
 
-use Clover\Http\Request;
-use Clover\Http\Response;
+use Clover\Framework\Http\Request;
+use Clover\Framework\Http\Response;
 
 final class Router
 {
