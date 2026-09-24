@@ -19,13 +19,14 @@ final class Response implements ResponseInterface
     public function status(int $code = 200): ResponseInterface
     {
         $this->statusCode = $code;
-       // http_response_code($code);
+
+        // http_response_code($code);
         return $this;
     }
 
     public function json(array $body): void
     {
-        header("Content-Type: application/json");
+        header('Content-Type: application/json');
         echo json_encode($body, JSON_PRETTY_PRINT);
         exit;
     }

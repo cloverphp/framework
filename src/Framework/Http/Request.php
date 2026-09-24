@@ -9,9 +9,13 @@ use Clover\Framework\Interfaces\RequestInterface;
 final class Request implements RequestInterface
 {
     private string $method;
+
     private string $path;
+
     private array $query;
+
     private array $body;
+
     private array $headers;
 
     public function __construct()
@@ -19,10 +23,10 @@ final class Request implements RequestInterface
         $this->method = $_SERVER['REQUEST_METHOD'] ?? 'GET';
         $this->path = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH);
         $this->query = $_GET;
-        $this->headers = getallheaders() ?: [];
+        $this->headers = getallheaders();
 
-        if(($this->headers['Content-Type'] ?? '') === 'application/json'){
-            $input = file_get_contents("php://input");
+        if (($this->headers['Content-Type'] ?? '') === 'application/json') {
+            $input = file_get_contents('php://input');
             $this->body = json_decode($input, true) ?? [];
         } else {
             $this->body = $_POST;
@@ -55,4 +59,3 @@ final class Request implements RequestInterface
         return $this->headers;
     }
 }
-

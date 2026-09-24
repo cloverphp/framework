@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Clover\Framework;
 
+use Clover\Framework\Http\Request;
+use Clover\Framework\Http\Response;
 use Clover\Framework\Router\Router;
 use Dotenv\Dotenv;
-use Clover\Framework\Http\Response;
-use Clover\Framework\Http\Request;
 
 class Clover
 {
@@ -16,9 +16,10 @@ class Clover
     // Lazy initialize router
     public function router(): Router
     {
-        if ($this->router === null) {
+        if (! $this->router instanceof Router) {
             $this->router = new Router();
         }
+
         return $this->router;
     }
 
@@ -32,7 +33,7 @@ class Clover
     {
         // --- Load .env ---
         $dotenvPath = dirname(__DIR__, 2);
-        if (file_exists($dotenvPath . '/.env')) {
+        if (file_exists($dotenvPath.'/.env')) {
             $dotenv = Dotenv::createImmutable($dotenvPath);
             $dotenv->load();
         }
@@ -58,28 +59,26 @@ class Clover
             ?? 3000;
 
         try {
-            //$callback();
+            // $callback();
 
             $green = "\033[32m";
             $reset = "\033[0m";
-            $green . "✅ Server running at: http://localhost:$finalPort" . $reset . PHP_EOL;
             shell_exec("php -S localhost:{$finalPort}");
             $req = new Request();
             $res = new Response();
 
             $this->router()
-                 ->dispatch($req, $res);
-
+                ->dispatch($req, $res);
 
         } catch (\Throwable $e) {
             $red = "\033[31m";
             $reset = "\033[0m";
 
-            echo $red . "❌ Server failed: " . $e->getMessage() . $reset . PHP_EOL;
+            echo $red.'❌ Server failed: '.$e->getMessage().$reset.PHP_EOL;
             // $e->getMessage();
 
             if ($devMode) {
-                echo $e->getTraceAsString() . PHP_EOL;
+                echo $e->getTraceAsString().PHP_EOL;
             }
             exit(1);
         }

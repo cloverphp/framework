@@ -10,7 +10,9 @@ use Clover\Framework\Http\Response;
 final class Router
 {
     protected array $routes = [];
+
     protected array $middlewares = [];
+
     protected array $errorMiddlewares = [];
 
     // Register middleware
@@ -21,6 +23,7 @@ final class Router
         } else {
             $this->middlewares[] = ['prefix' => $prefix, 'handler' => $middleware];
         }
+
         return $this;
     }
 
@@ -28,6 +31,7 @@ final class Router
     public function useError(callable $middleware): static
     {
         $this->errorMiddlewares[] = $middleware;
+
         return $this;
     }
 
@@ -35,12 +39,14 @@ final class Router
     public function get(string $path, callable $handler): static
     {
         $this->routes['GET'][$path] = $handler;
+
         return $this;
     }
 
     public function post(string $path, callable $handler): static
     {
         $this->routes['POST'][$path] = $handler;
+
         return $this;
     }
 
@@ -65,15 +71,17 @@ final class Router
         if (isset($this->routes[$method][$path])) {
             $stack[] = $this->routes[$method][$path];
         } else {
-            $stack[] = fn($req, $res, $next) => $res->status(404)->send("Not Found");
+            $stack[] = fn ($req, $res, $next) => $res->status(404)->send('Not Found');
         }
 
         $runner = function ($index, $err = null) use (&$runner, $stack, $req, $res) {
             if ($err !== null) {
                 // Run error middleware chain
                 foreach ($this->errorMiddlewares as $errorMw) {
-                    $errorMw($err, $req, $res, function () {});
+                    $errorMw($err, $req, $res, function () {
+                    });
                 }
+
                 return;
             }
 
